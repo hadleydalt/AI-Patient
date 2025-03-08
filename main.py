@@ -1,12 +1,13 @@
 import streamlit as st
 from openai import OpenAI
 
-client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=st.secrets["OPENAI_API_KEY"])
+#client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=st.secrets["DEEPSEEK_API_KEY"])
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.title("AI Patient")
 
 if "openai_model" not in st.session_state:
-    st.session_state["openai_model"] = "deepseek/deepseek-r1:free"
+    st.session_state["openai_model"] = "gpt-3.5-turbo"#"deepseek/deepseek-r1:free"
 
 patient_profiles = {
     "Patient 1": """
